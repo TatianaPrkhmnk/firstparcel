@@ -1,31 +1,26 @@
-const gallery = document.querySelector(".gallery");
+
+const iframe = document.querySelector('iframe');
+const player = new Vimeo.Player(iframe);
+
+player.on('timeupdate', function (seconds) {
+    videoplayer - current - time;
+    const currentTime = player.currentTime;
+});
 
 
-    const iframe = document.querySelector('iframe');
-    const player = new Vimeo.Player(iframe);
-
-    player.on('play', function() {
-        console.log('played the video!');
-    });
-
-    player.getVideoTitle().then(function(title) {
-        console.log('title:', title);
-    });
 
 
-    const onPlay = function(player) {
+player.on('timeupdate', seconds);
+    
+const currentTime = player.currentTime;
+
+const onPlay = function(seconds) {
     // data is an object containing properties specific to that event
 };
 
 player.on('play', onPlay);
 
-// If later on you decide that you don’t need to listen for play anymore.
-player.off('play', onPlay);
-
-// Alternatively, `off` can be called with just the event name to remove all
-// listeners.
-player.off('play');
-
-player.on('eventName', function(data) {
-    // data is an object containing properties specific to that event
-});
+// player.on('timeupdate', () => {
+//   const currentTime = player.currentTime;
+//   localStorage.setItem('videoplayer-current-time', currentTime);
+// });
